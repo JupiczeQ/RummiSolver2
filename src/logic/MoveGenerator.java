@@ -45,7 +45,7 @@ public class MoveGenerator {
      */
     private List<Move> generateFirstMovesAsMoves(GameState gameState) {
         List<Move> moves = new ArrayList<>();
-        List<Tile> hand = gameState.getPlayer().getHand();
+        List<Tile> hand = gameState.getCurrentPlayer().getHand();
 
         // Znajdź rozwiązania pierwszego ruchu
         List<List<Group>> solutions = generateFirstMoveSolutions(hand);
@@ -234,7 +234,7 @@ public class MoveGenerator {
     private List<Move> generatePlaysFromHand(GameState gameState) {
         List<Move> moves = new ArrayList<>();
         Table table = gameState.getTable();
-        List<Tile> hand = gameState.getPlayer().getHand();
+        List<Tile> hand = gameState.getCurrentPlayer().getHand();
 
         // Jeśli ręka jest pusta, nie ma co dodawać
         if (hand.isEmpty()) {
